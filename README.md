@@ -1,57 +1,52 @@
-Waterfall
-=========
+Lavafall
+========
 
-> [!CAUTION]
-> This project has reached end of life and is no longer maintained.  
-> We recommend you transition to [Velocity](https://papermc.io/software/velocity). For more information, see the [announcement](https://forums.papermc.io/threads/1088/).
+Lavafall is a fork of Waterfall, which in turn is based on BungeeCord. This project is maintained with a focus on creating a straightforward, stable server proxy while integrating a few practical improvements.
 
-Waterfall is a fork of the well-known [BungeeCord](https://github.com/SpigotMC/BungeeCord) server teleportation suite.
+-------------
 
-Waterfall focuses on three main areas:
+How to Use Lavafall (for Server Administrators)
+------------------------------------------------
+1. **Download Lavafall.jar**  
+   You can download the latest jar from our download page:  
+   [Lavafall Downloads](https://soon.com).
 
-- **Stability**: Waterfall aims to be stable. We will achieve this through making the code base testable and discouraging practices that lead to proxy lag.
-- **Features**: Waterfall aims to include more features than canonical BungeeCord.
-- **Scalability**: Waterfall should be able to handle a large number of concurrent players, given a reasonably modern CPU, memory, and good network connection.
+2. **Requirements**  
+   Lavafall requires Java 8 or above.
 
-## Why fork BungeeCord?
+3. **Setup**  
+   Use Lavafall in place of your current proxy setup following your standard installation procedures.
 
-Think of Waterfall as a principles fork.
+How to Use Lavafall (for Plugin Developers)
+--------------------------------------------
+For plugin development, Lavafall exposes a public API that can be integrated using Maven or Gradle.
 
-Waterfall was forked because of the fact that upstream does not accept many contributions that are intended to better the ecosystem. Simply put, Waterfall aims to better
-the ecosystem by allowing changes to be exposed to a wider audience more quickly.
+**Maven Setup**  
 
-Waterfall will still track upstream BungeeCord and merge changes as needed.
+Add the following repository:
 
-## How To (Server Admins)
-
-Download a copy of Waterfall.jar from our homepage here: [Waterfall](https://papermc.io/downloads/waterfall)
-
-Waterfall requires **Java 8** or above.
-
-## How To (Plugin Developers)
-------
- * See our API patches [here](BungeeCord-Patches)
- * Waterfall API JavaDocs here: [papermc.io/javadocs](https://jd.papermc.io/waterfall/1.20)
- * Maven repository (for `waterfall-api`):
 ```xml
 <repository>
     <id>papermc</id>
     <url>https://repo.papermc.io/repository/maven-public/</url>
 </repository>
 ```
- * Artifact information:
+
+And include the dependency:
+
 ```xml
 <dependency>
     <groupId>io.github.waterfallmc</groupId>
     <artifactId>waterfall-api</artifactId>
-    <version>1.20-R0.3-SNAPSHOT</version>
+    <version>1.20-R0.1-SNAPSHOT</version>
     <scope>provided</scope>
 </dependency>
- ```
+```
 
-**Or alternatively, with Gradle:**
+**Gradle Setup**  
 
- * Repository:
+Include the repository:
+
 ```groovy
 repositories {
     maven {
@@ -59,27 +54,30 @@ repositories {
     }
 }
 ```
- * Artifact:
+
+And add the dependency:
+
 ```groovy
 dependencies {
-    compileOnly 'io.github.waterfallmc:waterfall-api:1.20-R0.3-SNAPSHOT'
+    compileOnly 'io.github.waterfallmc:waterfall-api:1.20-R0.1-SNAPSHOT'
 }
 ```
 
-## How To (Compiling From Source)
+Compiling from Source
+---------------------
+To compile Lavafall from source, ensure you have JDK 8 (or later), git, bash, and Maven installed.
 
-To compile Waterfall, you need JDK8, git, bash, maven, and an internet connection.
+1. Clone the repository.
+2. Run the build script using:
+   ```bash
+   ./waterfall build
+   ```
+3. The compiled jar will be located at `Lavafall-Proxy/bootstrap/target/` after the build completes.
 
-Clone this repo, run `./waterfall b` from *bash*, get jar from Waterfall-Proxy/bootstrap/target/
+Joining the Community
+---------------------
+Contributions are welcome. If you’d like to help improve Lavafall, please feel free to open a pull request. You can also join discussions on our [Discord](https://discord.gg/).
 
-## Join us
-
-* Feel free to open a PR! We accept contributions.
-* Join us on [Discord](https://discord.gg/papermc).
-* Visit our forums (https://forums.papermc.io/).
-
-## Special Thanks To
-
-![YourKit-Logo](https://yourkit.com/images/yklogo.png)
-
-[YourKit](https://yourkit.com/), makers of the outstanding Java profiler, supports open source projects of all kinds with their full-featured [Java](https://yourkit.com/features/) and [.NET](https://yourkit.com/dotnet/features/) application profilers. We thank them for granting Waterfall an OSS license so that we can make our software the best it can be.
+Special Thanks
+--------------
+For all Lavafall developers we want to say special thanks. Thank you for keeping this project going!
