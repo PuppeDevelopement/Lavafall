@@ -1,7 +1,10 @@
-Lavafall
-========
+# Lavafall
+
+<img src="https://i.imgur.com/UBJ49Oa.png" alt="Lavafall Image" width="250">
 
 Lavafall is a fork of Waterfall, which in turn is based on BungeeCord. This project is maintained with a focus on creating a straightforward, stable server proxy while integrating a few practical improvements.
+
+At the moment LavaFall is based on Waterfall 1.21
 
 -------------
 
